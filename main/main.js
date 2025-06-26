@@ -9,8 +9,8 @@ let mainWindow;
 function createWindow() {
     const { width: screenWidth, height: screenHeight } = screen.getPrimaryDisplay().workAreaSize;
 
-    const margin = 38;
-    const windowSize = 128;
+    const margin = 96;
+    const windowSize = 200;
 
     mainWindow = new BrowserWindow({
         width: windowSize,
@@ -26,16 +26,15 @@ function createWindow() {
         focusable: false,
         fullscreenable: false,
         webPreferences: {
-            contextIsolation: true,
+            contextIsolation: false,
             nodeIntegration: true
         }
     });
 
-    mainWindow.setIgnoreMouseEvents(true);
+    mainWindow.setIgnoreMouseEvents(true, { forward: true });
     mainWindow.loadFile(path.join(__dirname, '../renderer/index.html'));
     startKeyListener(mainWindow);
 }
-
 app.whenReady().then(() => {
     createWindow();
     createTray();

@@ -8,8 +8,8 @@ body {
   overflow: hidden;
 }
 #chibi {
-  width: 128px;
-  height: 128px;
+  width: 200px;
+  height: 200px;
   pointer-events: none;
   position: absolute;
   bottom: 20px;
