@@ -3,10 +3,12 @@
   "version": "2.2.1",
   "description": "A tiny animation that plays when you types or not.",
   "main": "./main/main.js",
+  "bin": "launcher.js",
   "scripts": {
     "start": "electron .",
     "postinstall": "node ./node_modules/electron/install.js",
-    "build": "electron-builder"
+    "build": "electron-builder",
+    "build:exe": "pkg . --targets node18-win-arm64 --output dist/chibi.exe"
   },
   "keywords": [],
   "author": "rishi-rj-s",
@@ -18,37 +20,11 @@
   },
   "devDependencies": {
     "electron": "^37.1.0",
-    "electron-builder": "^26.0.12"
+    "electron-builder": "^26.0.12",
+    "pkg": "^5.8.1"
   },
-  "build": {
-    "productName": "DIY Typing Animation",
-    "files": [
-      "main/**/*",
-      "renderer/**/*",
-      "assets/**/*",
-      "tray/**/*",
-      "listener/**/*",
-      "package.json"
-    ],
-    "extraResources": [
-      {
-        "from": "node_modules/nkbhook/build/Release",
-        "to": "nkbhook/build/Release"
-      }
-    ],
-    "win": {
-      "target": "nsis",
-      "icon": "./assets/icon.ico"
-    },
-    "nsis": {
-      "oneClick": false,
-      "perMachine": true,
-      "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true,
-      "shortcutName": "DIY Typing Animation",
-      "include": "./build/installer.nsh"
-    }
-  },
-  "asar": true
+  "pkg": {
+    "scripts": "launcher.js",
+    "outputPath": "dist"
+  }
 }
