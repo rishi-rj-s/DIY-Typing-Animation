@@ -22,7 +22,7 @@ function startKeyListener(mainWindow) {
       sleepTimeout = setTimeout(() => {
         sendAnimation('sleeping');
       }, 3700);
-    }, 300);
+    }, 500);
   }
 
   keyboard.start().onPressed(resetTimers);

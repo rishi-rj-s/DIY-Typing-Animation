@@ -42,4 +42,4 @@ SOFTWARE.
 GitHub Repository:
 https://github.com/rishi-rj-s/DIY-Typing-Animation.git
 
-If you enjoy using this application, consider giving it a ⭐ on GitHub!
+If you enjoy using this application, consider giving it a star on GitHub!
