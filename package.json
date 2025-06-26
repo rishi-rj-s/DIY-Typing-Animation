@@ -1,0 +1,54 @@
+{
+  "name": "diy-typing-animation",
+  "version": "1.0.6",
+  "description": "A tiny animation that plays when you types or not.",
+  "main": "./main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "node ./node_modules/electron/install.js",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "rishi-rj-s",
+  "license": "MIT",
+  "packageManager": "pnpm@10.12.1",
+  "dependencies": {
+    "auto-launch": "^5.0.6",
+    "nkbhook": "github:tuliocastro/node-keyboard-hook"
+  },
+  "devDependencies": {
+    "electron": "^37.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "productName": "DIY Typing Animation",
+    "files": [
+      "main/**/*",
+      "renderer/**/*",
+      "assets/**/*",
+      "tray/**/*",
+      "listener/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "node_modules/nkbhook/build/Release",
+        "to": "nkbhook/build/Release"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "./assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "DIY Typing Animation",
+      "include": "./build/installer.nsh"
+    }
+  },
+  "asar": true
+}

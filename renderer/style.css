@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: transparent;
+  overflow: hidden;
+}
+#chibi {
+  width: 128px;
+  height: 128px;
+  pointer-events: none;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
