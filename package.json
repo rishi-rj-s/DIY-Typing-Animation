@@ -1,6 +1,6 @@
 {
   "name": "diy-typing-animation",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A tiny animation that plays when you types or not.",
   "main": "./main/main.js",
   "scripts": {
