@@ -3,25 +3,21 @@
   "version": "2.2.1",
   "description": "A tiny animation that plays when you types or not.",
   "main": "./main/main.js",
-  "bin": "launcher.js",
   "scripts": {
     "start": "electron .",
     "postinstall": "node ./node_modules/electron/install.js",
-    "build": "electron-builder",
-    "build:exe": "pkg . --targets node18-win-arm64 --output dist/chibi.exe"
+    "build": "electron-builder"
   },
   "keywords": [],
   "author": "rishi-rj-s",
   "license": "MIT",
   "packageManager": "pnpm@10.12.1",
   "dependencies": {
-    "auto-launch": "^5.0.6",
     "nkbhook": "github:tuliocastro/node-keyboard-hook"
   },
   "devDependencies": {
     "electron": "^37.1.0",
-    "electron-builder": "^26.0.12",
-    "pkg": "^5.8.1"
+    "electron-builder": "^26.0.12"
   },
   "pkg": {
     "scripts": "launcher.js",

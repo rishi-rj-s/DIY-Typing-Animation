@@ -1,5 +1,4 @@
 const { app, BrowserWindow, ipcMain, screen } = require('electron');
-const AutoLaunch = require('auto-launch');
 const path = require('path');
 const { createTray } = require('../tray/tray.js');
 const { startKeyListener } = require('../listener/keyListener.js');
@@ -32,18 +31,12 @@ function createWindow() {
     });
 
     mainWindow.setIgnoreMouseEvents(true, { forward: true });
-    mainWindow.loadFile(path.join(__dirname, '../renderer/index.html'));
+    mainWindow.loadFile(path.join(__dirname, '../renderer/index.html'));             
     startKeyListener(mainWindow);
 }
 app.whenReady().then(() => {
     createWindow();
     createTray();
-
-    const appLauncher = new AutoLaunch({
-        name: 'DIY Typing Animation'
-    });
-
-    appLauncher.enable().catch(() => { });
 
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow();
